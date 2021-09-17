@@ -52,35 +52,37 @@
 
                             <br>
                         <div class="input-group row">
-                            <label for="description" class="col-sm-2 col-form-label">Content :</label>
+                            <label for="status" class="col-sm-2 col-form-label">Status :</label>
                             <div class="col-sm-6">
                                 @error('description')
                                 <div class="alert alert-danger">{{ $message }}</div>
                                 @enderror
-							<textarea name="description" id="description" cols="40" rows="5" >@isset($category){{ $category->content }}@endisset</textarea>
+                                <input type="text" name="status" id="status" class="form-control"   value="@isset($category){{ $category->status }}@endisset"></input>
                             </div>
                         </div>
                         <br>
 
-                            <div class="input-group row">
-                                <label for="description" class="col-sm-2 col-form-label">slug</label>
-                                <div class="col-sm-6">
-                                    @error('slug')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
-                                    <textarea name="slug" id="slug">@isset($category){{ $category->slug }}@endisset</textarea>
-                                </div>
-                            </div>
-                            <br>
-
                         <div class="input-group row">
-                            <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
-                            <div class="col-sm-10">
-                                <label class="btn btn-default btn-file">
-                                    Загрузить <input type="file" style="display: none;" name="image" id="image">
-                                </label>
+                            <label for="meta_key_words" class="col-sm-2 col-form-label">meta_key_words</label>
+                            <div class="col-sm-6">
+                                @error('slug')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="text" name="meta_key_words"  class="form-control" id="meta_key_words" value="@isset($category){{ $category->meta_key_words }}@endisset"></input>
                             </div>
                         </div>
+                        <br>
+                        <div class="input-group row">
+                            <label for="meta_descriptions" class="col-sm-2 col-form-label">meta_descriptions</label>
+                            <div class="col-sm-6">
+                                @error('slug')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                                <input type="text" name="meta_descriptions" id="meta_descriptions" class="form-control" value="@isset($category){{ $category->meta_descriptions }}@endisset"></input>
+                            </div>
+                        </div>
+                        <br>
+
                         <button class="btn btn-success" style="
     font-size: 16px;
     font-weight: 400;

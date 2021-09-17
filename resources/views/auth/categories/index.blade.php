@@ -8,13 +8,13 @@
                 <tbody>
                 <tr>
                     <th>
-                        #
+                       id
                     </th>
                     <th>
-                        Slug
+                        Name
                     </th>
                     <th>
-                        Название
+                        Status
                     </th>
                     <th>
                         Действия
@@ -23,8 +23,8 @@
                 @foreach($categories as $category)
                     <tr>
                         <td>{{ $category->id }}</td>
-                        <td>{{ $category->slug}}</td>
-                        <td>{{ $category->name }}</td>
+                        <td>{{ $category->name}}</td>
+                        <td>{{ $category->status }}</td>
                         <td>
                             <div class="btn-group" role="group">
                                 <form action="{{ route('categories.destroy', $category) }}" method="POST">

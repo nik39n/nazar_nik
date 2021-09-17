@@ -24,21 +24,16 @@
                 <td>{{ $category->name }}</td>
             </tr>
             <tr>
-                <td>Описание</td>
-                <td>{{ $category->content }}</td>
+                <td>Status</td>
+                <td>{{ $category->status }}</td>
             </tr>
             <tr>
-                <td>ParentID</td>
-                <td>{{ $category->parent_id }}</td>
+                <td>meta_key_words</td>
+                <td>{{ $category->meta_key_words }}</td>
             </tr>
             <tr>
-                <td>Slug</td>
-                <td>{{ $category->slug }}</td>
-            </tr>
-            <tr>
-                <td>Картинка</td>
-                <td><img src="{{ Storage::url($category->image) }}"
-                         height="240px"></td>
+                <td>meta_descriptions</td>
+                <td>{{ $category->meta_descriptions }}</td>
             </tr>
             </tbody>
         </table>
