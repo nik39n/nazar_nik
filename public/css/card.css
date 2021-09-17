@@ -1,0 +1,178 @@
+.main-cards{
+    width: 501px;
+    height: 663px;
+    margin-bottom: 55px;
+}
+.content-card {
+    align-items: flex-start;
+}
+.name-collection{
+    margin-bottom: 107px;
+}
+.des-dress{
+    font-size: 36px;
+    font-family: "Raleway";
+    font-weight: 400;
+    font-style: normal;
+    margin-right: 10px;
+}
+.first-name{
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content-description{
+    display: flex;
+    align-items:flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.like-text,
+.viewed-text{
+    width: 100%;
+    font-size: 48px;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 87px;
+}
+.like-card{
+    width: 378px;
+    height: 609px;
+}
+.viewed-text{
+    font-size: 36px;
+    margin-bottom: 69px;
+}
+.viewed-card{
+    width: 270px;
+    height: 434px;
+}
+.viewed{
+    margin-bottom: 150px;
+}
+.like{
+    margin-bottom: 80px;
+}
+.name{
+    font-family: 'Cormorant SC', serif;
+    font-weight: 500;
+    font-size: 48px;
+}
+.price{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+.last-price{
+font-weight: 400;
+font-size: 32px;
+margin-right: 35px;
+}
+.new-price{
+font-weight: 300;
+font-size: 32px;
+}
+.sale{
+    font-weight: 300;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.text-color{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.fw-500{
+    font-weight: 500;
+}
+.name-color{
+    margin-left: 10px;
+}
+.square{
+    width: 21px;
+    height: 21px;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+
+}
+.colour-square{
+    margin-right: 16px;
+}
+.colour,
+.table-size,
+.logo-sale,
+.logo1,
+.wish-list,
+.wish,
+.extra,
+.sale-btn{
+    display: flex;
+    align-items: center;
+}
+.table{
+    font-size: 18px;
+    line-height: 21px;
+    margin-left: 8px;
+}
+.table-size{
+    align-items:flex-start;
+    margin-top: 31px;
+}
+.size{
+    height: 45px;
+    width: 100px;
+    border: black 1px solid;
+    margin-top: 15px;
+    margin-bottom: 30px;
+
+}
+.logo1{
+    margin-right: 14px;
+    margin-bottom: 30px;
+}
+.btn-sale{
+    width: 208.02px;
+    height: 47px;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    margin-right: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.wish-list{
+    margin-top: 35px;
+    margin-bottom: 35px;
+}
+.wish{
+    font-size: 14px;
+    line-height: 16px;
+    margin-left: 8px;
+}
+.extra-text,.seria-text{
+    font-size: 20px;
+    line-height: 23px;
+    margin-left: 8px;
+}
+.seria,
+.seria-text{
+    font-size: 14px;
+    line-height: 16px;
+}
+.extra{
+    margin-bottom: 18px;
+    border-bottom: 0.25px solid #444444;
+    padding-bottom: 17px;
+    width: 480px;
+}
+.extra-text{
+    margin-left: 15px;
+}
+.mg-30{
+    margin-bottom: 50px;
+}

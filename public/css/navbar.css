@@ -1,0 +1,111 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@500&display=swap');
+  /*---2---*/
+  p, a, h5,
+  .dropdown-btn,
+  .select{
+    font-family: 'Raleway', sans-serif;
+    color: black;
+    font-weight: 400;
+    font-style: normal;
+  }
+.nav-content{
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+.nav-information{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+.nav-flex{
+    display: flex;
+    flex-direction: column;
+
+}
+.navbar-light .navbar-nav .nav-link{
+    font-size: 18px;
+    color: black;
+}
+.navbar-collapse {
+    flex-basis: 100%;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo{
+    width: 122.55px;
+    height: 56px;
+}
+.icon{
+    width: 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icon .text{
+    font-size: 10px;
+    margin-bottom: 0rem;
+
+}
+.nav-sale img{
+    padding: 5px;
+}
+.navbar .navbar-expand-lg .navbar-light .bg-light .nav-flex{
+    background-color: white;
+    padding-top: 35px;
+    padding-bottom: 14px;
+}
+.navbar{
+    padding-top: 35px;
+    padding-bottom: 14px;
+}
+.dropdown-menuuuuuu{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.navbar-nav .dropdown{
+    margin-right: 24px;
+}
+.logo{
+    margin-left: -30px;
+}
+.pdl-90{
+    padding-left: 90px;
+}
+.fw-600{
+    font-weight: 600;
+}
+.margin-0{
+    margin: 0 !important;
+    padding-right: 0 !important;
+}
+.nav-h1{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 21px;
+    margin-bottom: 21px;
+}
+.nav-h2{
+    font-size: 12px;
+    line-height: 14px;
+    margin-bottom: 10px;
+
+}
+.page-item.active .page-link {
+    color: black;
+    z-index: 3;
+    background-color: rgb(192, 192, 192);
+    border-color: #dee2e6;
+}
+.page-link{
+    color: black;
+}
