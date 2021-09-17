@@ -53,7 +53,7 @@
                         <ul class="nav navbar-nav mr-auto mt-2 mt-lg-0" style="width: 100%;">
                             @admin
                                 <li><a href="{{route('categories.index')}}" class="nav-link">Категории</a></li>
-                                <li><a href=""  class="nav-link">Товары</a>
+                                <li><a href="{{route('products.index')}}"  class="nav-link">Товары</a>
                                 <li><a href=""  class="nav-link">Бренды</a>
                                 <li><a href=""class="nav-link">Заказы</a></li>
                             @endadmin

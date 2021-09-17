@@ -32,10 +32,11 @@ Auth::routes([
 Route::get("/logout", 'App\Http\Controllers\Auth\LoginController@logout')->name('get-logout');
 
 Route::group(['middleware' => 'auth'], function () {
-    Route::group(['middleware' => 'is_admin'], function(){
+    Route::group(['middleware' => 'is_admin'], function () {
         Route::get('/orders', 'App\Http\Controllers\Admin\OrderController@index')->name('home');
     });
     Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
+    Route::resource('products', 'App\Http\Controllers\Admin\ProductController');
 });
 
 Route::get('/', [ProductController::class, 'index'])->name('index');
@@ -53,5 +54,3 @@ Route::get('add-to-viewed/{id}', [ProductController::class, 'addToViewed'])->nam
 Route::patch('update-cart', [ProductController::class, 'update'])->name('update.cart');
 Route::delete('remove-from-cart', [ProductController::class, 'removecart'])->name('remove.from.cart');
 Route::delete('remove-from-wish', [ProductController::class, 'removewish'])->name('remove.from.wish');
-
-

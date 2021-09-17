@@ -17,13 +17,10 @@
                         Название
                     </th>
                     <th>
-                        Категория
-                    </th>
-                    <th>
                         Цена
                     </th>
                     <th>
-                        Количество
+                        Со скидкой
                     </th>
                     <th>
                         Действия
@@ -32,15 +29,10 @@
                 @foreach($products as $product)
                     <tr>
                         <td>{{ $product->id}}</td>
-                        <td>{{ $product->name }}</td>
-                        <td>@isset($product->getCategory()->name)
-                            {{$product->getCategory()->name}}
-                        @else
-                            Нет категории
-                        @endisset
+                        <td>{{ $product->name_product }}</td>
                         </td>
                         <td>{{ $product->price }}</td>
-                        <td>{{ $product->count }}</td>
+                        <td>{{ $product->price_hire }}</td>
 
                         <td>
                             <div class="btn-group" role="group">
