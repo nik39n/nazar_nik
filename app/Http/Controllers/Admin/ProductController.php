@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Brand;
+use App\Models\Images;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ProductRequest;
@@ -46,21 +47,29 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(ProductRequest $request)
+    public function store(Request $request)
     {
 
 
-        // $params = $request->all();
-        // unset($params['image']);
-        // if ($request->has('image')) {
-        //     $params['image'] = $request->file('image')->store('products');
-        // }
-
+        $params = $request->all();
         $request->validate([]);
+        if ($request->has('image')) {
+            $params['image'] = $request->file('image')->store('products');
+
+        }
+
         $path = $request->file('image')->store('products');
+
         $params = $request->all();
         $params['image'] = $path;
-        Product::create($params);
+
+        $tempd = Product::create($params);
+        
+        $tempid=$tempd['id'];
+        $params['product_id'] = $tempid;
+        
+        Images::create($params);
+        
         return redirect()->route('products.index');
     }
     /**
@@ -71,8 +80,9 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
+        $images = Images::where('product_id', $product->id)->get();
         $brands = Brand::get();
-        return view('auth.products.show', compact('product', 'brands'));
+        return view('auth.products.show', compact('product', 'brands', 'images'));
     }
 
     /**

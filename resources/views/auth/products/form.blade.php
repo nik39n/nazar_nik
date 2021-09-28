@@ -32,12 +32,13 @@
                     @include('auth.layouts.error', ['fieldName' => 'name'])
 
                         <input type="text" class="form-control" name="name" id="name"
-                               value="@isset($product){{ $product->name }}@endisset">
+                               value="@isset($product){{ $product->name_product }}
+                               @endisset">
                     </div>
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="category_id" class="col-sm-2 col-form-label">Категория: </label>
+                    <!-- <label for="category_id" class="col-sm-2 col-form-label">Категория: </label>
                     <div class="col-sm-6">
                         @include('auth.layouts.error', ['fieldName' => 'category_id'])
 
@@ -53,11 +54,11 @@
                                     >{{$category->name}}</option>
                             @endforeach
                         </select>
-                    </div>
+                    </div> -->
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="category_id" class="col-sm-2 col-form-label">Бренд: </label>
+                    <!-- <label for="category_id" class="col-sm-2 col-form-label">Бренд: </label>
                     <div class="col-sm-6">
                     @include('auth.layouts.error', ['fieldName' => 'brand_id'])
 
@@ -73,7 +74,7 @@
                                     >{{$brand->name}}</option>
                             @endforeach
                         </select>
-                    </div>
+                    </div> -->
                 </div>
                 <br>
                 <div class="input-group row">
@@ -82,19 +83,8 @@
                         @include('auth.layouts.error', ['fieldName' => 'content'])
 
 
-								<textarea name="content" id="content"  value="@isset($product){{ $product->content }}@endisset" cols="40" rows="5" >@isset($product){{ $product->content }}@endisset</textarea>
+								<textarea name="content" id="content"  value="@isset($product){{ $product->description }}@endisset" cols="40" rows="5" >@isset($product){{ $product->description }}@endisset</textarea>
                     </div>
-                </div>
-                <div class="input-group row">
-                                <label for="slug" class="col-sm-2 col-form-label">slug</label>
-                                <div class="col-sm-6">
-                                @include('auth.layouts.error', ['fieldName' => 'slug'])
-
-
-                                    <textarea name="slug" id="slug" >@isset($product){{ $product->slug }}@endisset</textarea>
-                                </div>
-                            </div>
-                            
                 </div>
                 <br>
                 <div class="input-group row">
@@ -114,16 +104,15 @@
                     <div class="col-sm-2">
                         @include('auth.layouts.error', ['fieldName' => 'price'])
                         <input type="text" class="form-control" name="price" id="price"
-                               value="@isset($product){{ $product->price }}@endisset">
+                               value="@isset($product){{ $product->price }}@endisset" >
                     </div>
                 </div>
                 <br>
                 <div class="input-group row">
-                    <label for="count" class="col-sm-2 col-form-label">Количество: </label>
+                    <label for="count" class="col-sm-2 col-form-label">price_hire_text: </label>
                     <div class="col-sm-2">
-                        @include('auth.layouts.error', ['fieldName' => 'count'])
                         <input type="text" class="form-control" name="count" id="count"
-                               value="@isset($product){{ $product->count }}@endisset">
+                               value="@isset($product){{ $product->price_hire_text }}@endisset">
                     </div>
                 </div>
                 <br>

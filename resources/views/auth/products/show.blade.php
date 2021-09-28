@@ -73,7 +73,11 @@
             </tr>
             <tr>
                 <td>Картинка</td>
-                <td><img src="{{ Storage::url($product->image) }}" height="240px"></td>
+                <td>
+                    @foreach($images as $image)
+                        <img src="{{ Storage::url($image->image) }}" height="240px">
+                    @endforeach    
+                </td>
             </tr>
            
             </tbody>
