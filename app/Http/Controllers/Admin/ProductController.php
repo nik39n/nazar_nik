@@ -95,6 +95,7 @@ class ProductController extends Controller
     {
         $brands = Brand::get();
         $categories = Category::get();
+        
         return view('auth.products.form', compact('product', 'categories', 'brands'));
     }
 
@@ -113,20 +114,41 @@ class ProductController extends Controller
         //     Storage::delete($product->image);
         //     $params['image'] = $request->file('image')->store('products');
         // }
-        Storage::delete($product->image);
+        // $imageObj = Images::where('product_id',$product['id'])->get();
+        // foreach ($imageObj as $value) {
+        //     $value->update(['image'=>'123']);
+        // }
+
+        // $imageObj = Images::where('product_id',$product['id'])->get();
+
+        // dd($imageObj);
+
+
         if ($request->file('image') == null) {
             $path = "";
         } else {
             $path = $request->file('image')->store('products');
         }
         $params = $request->all();
+        
         $params['image'] = $path;
+        
+        $params['product_id'] = $product['id'];
+        // dd($params);
+
+
+
+
         foreach (['new', 'hit', 'recommend'] as $fieldName) {
             if (!isset($params[$fieldName])) {
                 $params[$fieldName] = 0;
             }
         }
+        Images::create($params);
+
         $product->update($params);
+        
+
         return redirect()->route('products.index');
     }
 
