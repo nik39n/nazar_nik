@@ -83,7 +83,10 @@
                         @include('auth.layouts.error', ['fieldName' => 'content'])
 
 
-								<textarea name="content" id="content"  value="@isset($product){{ $product->description }}@endisset" cols="40" rows="5" >@isset($product){{ $product->description }}@endisset</textarea>
+								<textarea name="content" id="content"  value="@isset($product){{ $product->description }}@endisset" cols="40" rows="5" style="
+    border: 1px solid #495057;
+    border-radius: 3px;
+" >@isset($product){{ $product->description }}@endisset</textarea>
                     </div>
                 </div>
                 <br>

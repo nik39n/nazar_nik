@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
     });
     Route::resource('categories', 'App\Http\Controllers\Admin\CategoryController');
     Route::resource('products', 'App\Http\Controllers\Admin\ProductController');
+    Route::resource('brands','App\Http\Controllers\Admin\BrandController');
 });
 
 Route::get('/', [ProductController::class, 'index'])->name('index');
