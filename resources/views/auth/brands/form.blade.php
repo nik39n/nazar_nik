@@ -40,12 +40,10 @@
                         </div>
                         <br>
                         <div class="input-group row">
-                            <label for="content" class="col-sm-2 col-form-label" >meta_descriptions </label>
+                            <label for="meta_descriptions" class="col-sm-2 col-form-label" >meta_descriptions </label>
                             <div class="col-sm-6">
-                                <!-- @error('content')
-                                <div class="alert alert-danger">{{ $message }}</div>
-                                @enderror -->
-							<textarea name="content" id="content" cols="40" rows="5" style="
+                                
+							<textarea name="meta_descriptions" id="meta_descriptions" cols="40" rows="5" style="
     border: 1px solid #495057;
     border-radius: 3px;
 " >@isset($brand){{ $brand->meta_descriptions }}@endisset</textarea>
@@ -54,12 +52,10 @@
                         <br>
 
                             <div class="input-group row">
-                                <label for="slug" class="col-sm-2 col-form-label">meta_key_words</label>
+                                <label for="meta_key_words" class="col-sm-2 col-form-label">meta_key_words</label>
                                 <div class="col-sm-6">
-                                    <!-- @error('slug')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror -->
-                                    <textarea name="slug" id="slug" cols="40" rows="5" style="
+                                   
+                                    <textarea name="meta_key_words" id="meta_key_words" cols="40" rows="5" style="
     border: 1px solid #495057;
     border-radius: 3px;
 ">@isset($brand){{ $brand->meta_key_words }}@endisset</textarea>

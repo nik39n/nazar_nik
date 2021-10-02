@@ -40,7 +40,6 @@ class BrandController extends Controller
      */
     public function store(BrandRequest $request)
     {
-        $request->validate([]);
         $params = $request->all();
         
 

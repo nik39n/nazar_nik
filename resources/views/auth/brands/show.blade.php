@@ -25,11 +25,11 @@
             </tr>
             <tr>
                 <td>meta_key_words</td>
-                <td>{{ $brand->content }}</td>
+                <td>{{ $brand->meta_key_words }}</td>
             </tr>
             <tr>
                 <td>meta_descriptions</td>
-                <td>{{ $brand->parent_id }}</td>
+                <td>{{ $brand->meta_descriptions }}</td>
             </tr>
             </tbody>
         </table>

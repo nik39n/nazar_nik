@@ -7,6 +7,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Images;
+use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ProductRequest;
@@ -52,7 +53,8 @@ class ProductController extends Controller
 
 
         $params = $request->all();
-        $request->validate([]);
+        
+        // $request->validate([]);
         if ($request->has('image')) {
             $params['image'] = $request->file('image')->store('products');
 
@@ -69,6 +71,16 @@ class ProductController extends Controller
         $params['product_id'] = $tempid;
         
         Images::create($params);
+        foreach ($params['category_id'] as $value) {
+            $params['category_id']=$value;
+            ProductCategory::create($params);
+        }
+
+        
+
+
+
+
         
         return redirect()->route('products.index');
     }
@@ -106,7 +118,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(ProductRequest $request, Product $product)
+    public function update(Request $request, Product $product)
     {
         // $params = $request->all();
         // unset($params['image']);
@@ -122,8 +134,8 @@ class ProductController extends Controller
         // $imageObj = Images::where('product_id',$product['id'])->get();
 
         // dd($imageObj);
-
-
+        
+        ProductCategory::where('product_id',$product->id)->delete();
         if ($request->file('image') == null) {
             $path = "";
         } else {
@@ -135,7 +147,10 @@ class ProductController extends Controller
         
         $params['product_id'] = $product['id'];
         // dd($params);
-
+        foreach ($params['category_id'] as $value) {
+            $params['category_id']=$value;
+            ProductCategory::create($params);
+        }
 
 
 
