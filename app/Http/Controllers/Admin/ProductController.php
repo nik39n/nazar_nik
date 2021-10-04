@@ -8,6 +8,7 @@ use App\Models\Category;
 use App\Models\Brand;
 use App\Models\Images;
 use App\Models\ProductCategory;
+use App\Models\ProductBrand;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\ProductRequest;
@@ -53,28 +54,34 @@ class ProductController extends Controller
 
 
         $params = $request->all();
+
         
         // $request->validate([]);
         if ($request->has('image')) {
             $params['image'] = $request->file('image')->store('products');
 
         }
-
         $path = $request->file('image')->store('products');
 
         $params = $request->all();
+        
         $params['image'] = $path;
 
         $tempd = Product::create($params);
-        
         $tempid=$tempd['id'];
         $params['product_id'] = $tempid;
         
         Images::create($params);
+
         foreach ($params['category_id'] as $value) {
             $params['category_id']=$value;
             ProductCategory::create($params);
         }
+        foreach ($params['brand_id'] as $value) {
+            $params['brand_id']=$value;
+            ProductBrand::create($params);
+        }
+
 
         
 
@@ -93,8 +100,21 @@ class ProductController extends Controller
     public function show(Product $product)
     {
         $images = Images::where('product_id', $product->id)->get();
-        $brands = Brand::get();
-        return view('auth.products.show', compact('product', 'brands', 'images'));
+        $productbrands = ProductBrand::where('product_id',$product->id)->get();
+        $productcategories = ProductCategory::where('product_id',$product->id)->get();
+        $brands =[];
+        $categories =[];
+        foreach ($productbrands as $value) {
+            $brandname = Brand::select('name')->where('id',$value['brand_id'])->get();
+            array_push($brands, $brandname);    
+        }
+        foreach ($productcategories as $value) {
+            $categoryname = Brand::select('name')->where('id',$value['category_id'])->get();
+            array_push($categories, $categoryname);    
+        }
+        
+        
+        return view('auth.products.show', compact('product', 'brands', 'images','categories'));
     }
 
     /**
@@ -136,6 +156,7 @@ class ProductController extends Controller
         // dd($imageObj);
         
         ProductCategory::where('product_id',$product->id)->delete();
+        ProductBrand::where('product_id',$product->id)->delete();
         if ($request->file('image') == null) {
             $path = "";
         } else {
@@ -147,10 +168,19 @@ class ProductController extends Controller
         
         $params['product_id'] = $product['id'];
         // dd($params);
-        foreach ($params['category_id'] as $value) {
-            $params['category_id']=$value;
-            ProductCategory::create($params);
-        }
+        if(array_key_exists('category_id',$params)){
+            foreach ($params['category_id'] as $value) {
+                $params['category_id']=$value;
+                ProductCategory::create($params);
+            }
+        };
+        if(array_key_exists('brand_id',$params)){
+            foreach ($params['brand_id'] as $value) {
+                $params['brand_id']=$value;
+                ProductBrand::create($params);
+            }
+        };
+        
 
 
 

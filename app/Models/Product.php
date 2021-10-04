@@ -22,7 +22,6 @@ class Product extends Model
     "name_product",
     "price",
     "price_hire",
-    "brand_id",
     "stock",
     "collection_id",
     "year",

@@ -44,6 +44,30 @@
                 <td>{{ $product->collection_id }}</td>
             </tr>
             <tr>
+                <td>Brand</td>
+                <td>
+                    @foreach($brands as $brand)
+                        @foreach($brand as $value)
+                            {{$value->name}},
+                        @endforeach
+                    @endforeach
+                </td>
+            </tr>
+            <tr>
+                <td>Category</td>
+                <td>
+                    @foreach($categories as $Category)
+                        @foreach($Category as $value)
+                            {{$value->name}},
+                        @endforeach
+                    @endforeach
+                </td>
+            </tr>
+            <tr>
+                <td>typeProduct_id</td>
+                <td>{{ $product->typeProduct_id }}</td>
+            </tr>
+            <tr>
                 <td>typeProduct_id</td>
                 <td>{{ $product->typeProduct_id }}</td>
             </tr>
