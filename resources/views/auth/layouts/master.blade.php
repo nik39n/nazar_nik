@@ -55,7 +55,7 @@
                                 <li><a href="{{route('categories.index')}}" class="nav-link">Категории</a></li>
                                 <li><a href="{{route('products.index')}}"  class="nav-link">Товары</a>
                                 <li><a href="{{route('brands.index')}}"  class="nav-link">Бренды</a>
-                                <li><a href=""class="nav-link">Заказы</a></li>
+                                <li><a href=""class="nav-link">Заказы</a></li>@else 
                             @endadmin
                         
                 
