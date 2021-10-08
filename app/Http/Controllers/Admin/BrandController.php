@@ -43,6 +43,7 @@ class BrandController extends Controller
         $params = $request->all();
         
 
+        $request->validate([]);
 
         Brand::create($params);
         return redirect()->route('brands.index');

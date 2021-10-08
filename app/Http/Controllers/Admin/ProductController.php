@@ -56,7 +56,7 @@ class ProductController extends Controller
         $params = $request->all();
 
         
-        // $request->validate([]);
+        $request->validate([]);
         if ($request->has('image')) {
             $params['image'] = $request->file('image')->store('products');
 
